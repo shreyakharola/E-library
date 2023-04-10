@@ -1,0 +1,366 @@
+.topnav {
+    background: #315EA1 ;
+    font-size:xx-large;
+}
+.topnavhead {
+    color: white;
+    top: 0;
+    margin: 0;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+
+.content {
+    max-width: 400px;
+    padding: 150px;
+}
+
+.signin {
+  padding: 15px 32px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+    margin-top: 40px;
+    margin-left: 40px;
+    background: #315EA1;
+    color:  white;
+    border-radius: 12px;
+
+}
+
+/* login page css below: */
+body {
+  background-color: lemonchiffon;
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  color: #2b3e51;
+}
+
+h2 {
+  font-weight: 300;
+  text-align: center;
+}
+
+p {
+  position: relative;
+}
+
+/* a,
+a:link,
+a:visited,
+a:active {
+  color: #3ca9e2;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+a:focus, a:hover,
+a:link:focus,
+a:link:hover,
+a:visited:focus,
+a:visited:hover,
+a:active:focus,
+a:active:hover {
+  color: #329dd5;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+} */
+
+#login-form-wrap {
+  background-color: #fff;
+  width: 35%;
+  margin: 30px auto;
+  text-align: center;
+  padding: 20px 0 0 0;
+  border-radius: 4px;
+  box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
+}
+
+#login-form {
+  padding: 0 60px;
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  outline: none;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 4px;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 0 0 0 10px;
+  margin: 0;
+  color: #8a8b8e;
+  border: 1px solid #c2c0ca;
+  font-style: normal;
+  font-size: 16px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  display: inline-block;
+  background: none;
+}
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #3ca9e2;
+}
+input[type="text"]:focus:invalid,
+input[type="email"]:focus:invalid {
+  color: #cc1e2b;
+  border-color: #cc1e2b;
+}
+input[type="text"]:valid ~ .validation,
+input[type="email"]:valid ~ .validation {
+  display: block;
+  border-color: #0C0;
+}
+input[type="text"]:valid ~ .validation span,
+input[type="email"]:valid ~ .validation span {
+  background: #0C0;
+  position: absolute;
+  border-radius: 6px;
+}
+input[type="text"]:valid ~ .validation span:first-child,
+input[type="email"]:valid ~ .validation span:first-child {
+  top: 30px;
+  left: 14px;
+  width: 20px;
+  height: 3px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+input[type="text"]:valid ~ .validation span:last-child,
+input[type="email"]:valid ~ .validation span:last-child {
+  top: 35px;
+  left: 8px;
+  width: 11px;
+  height: 3px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.validation {
+  display: none;
+  position: absolute;
+  content: " ";
+  height: 60px;
+  width: 30px;
+  right: 15px;
+  top: 0px;
+}
+
+input[type="submit"] {
+  border: none;
+  display: block;
+  background-color: #3ca9e2;
+  color: #fff;
+
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  font-size: 18px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+
+#create-account-wrap {
+  background-color: #eeedf1;
+  color: #8a8b8e;
+  font-size: 14px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 0 0 4px 4px;
+}
+
+
+/* login with linkdn: */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+body {
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+input,
+.btn {
+  width: 90%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin: 4px 0;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+input:hover,
+.btn:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 650px) {
+  .col {
+    width: 90%;
+    margin-top: 0;
+  }
+}
+a:link
+{
+    color:#FFFFFF;
+}
+.fb {
+  background-color: #3B5998;
+}
+
+.twitter {
+  background-color: #55ACEE;
+}
+
+.google {
+  background-color: #dd4b39;
+}
+
+/* style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.addbook {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 13px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 8px 18px 0px;
+  cursor: pointer;
+  float: right; 
+}
+
+.user_icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  padding: 5px 5px;
+  float: right;
+  margin: 8px 20px 0px;
+}
+
+
+/* book reviews page :login_elibrary.html */
+
+body {
+  background-color: #eaeff1;
+  font-family: "Raleway", sans-serif;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap");
+
+.card_image {
+  width: 100%;
+  border-radius: 0px;
+  height: 200px;
+  object-fit: cover;
+}
+
+#card_container {
+  display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-auto-rows: auto;
+margin: 80px;
+  margin-top: 0;
+    display: grid;
+  column-gap: 2em;
+  row-gap: 2em;
+}
+
+.card {
+  /* Change background color */
+  background-color: white;
+
+  /* Add border */
+  border: 1px solid #bacdd8;
+  width: 200px;
+  height: 420px;
+  /* Add space between the border and the content */
+  padding: 8px;
+
+  border-radius: 0px;
+}
+
+.tag {
+  padding: 4px 8px;
+  border: 1px solid #e5eaed;
+  margin: 0;
+  border-radius: 50px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #788697;
+}
+
+/* Style div elements that have class equal to name */
+.name {
+  font-size: 15px;
+  font-weight: 600;
+
+  margin-top: 16px;
+}
+
+/* Style p element */
+p {
+  font-size: 11px;
+  color: #7f8c9b;
+  line-height: 150%;
+}
+
+/* Style button element */
+button {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 50px;
+  float: right;
+  font-weight: 400;
+  color: #0077ff;
+  background-color: #e0efff;
+
+  /* Button is inline-block element by default, it need to have block display for margin: 0 auto; to work */
+  margin: auto;
+  display: block;
+
+  /* Button is a clickable element, therefore it should have a pointer cursor */
+  cursor: pointer;
+}
+
+.card__details {
+  /* Add space around the details */
+  padding: 3px 2px 2px 2px;
+}
+
+button:focus,
+button:hover {
+  background-color: #0077ff;
+  color: #e0efff;
+}
+

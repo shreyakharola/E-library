@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-library</title>
+    <link rel="stylesheet" href="elibrary.css">
+    <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
+  </head>
+  <body>
+    <nav class="topnav" class="fixed-top">
+        <div class="container-fluid">
+            <span><img src="logocow.png" alt=""></span>
+          <span class="topnavhead">E-library</span>
+        </div>
+      </nav>
+<div class="content">
+      <span style="font-size: xx-large; padding-left: 15%;">Welcome!!</span><br>
+      <span style="font-size: x-large;">To the new world of books...</span><br>
+      
+      <span><button onclick="window.location.href = 'login_page.html';"class="signin"> Signin/Signup</button></span>
+    </div>
+      <script>
+        window.onscroll = function() {myFunction()};
+        
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+   
+        </script>
+  </body>
+</html>
