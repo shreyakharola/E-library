@@ -14,27 +14,27 @@
   }
 
 
-.content {
+.content_elibrary {
     max-width: 400px;
-    padding: 150px;
+    padding: 30px;
+    margin: 200px 50px 50px 490px;
 }
 
 .signin {
   padding: 15px 32px;
   border: none;
-  text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-    margin-top: 40px;
-    margin-left: 40px;
-    background: #315EA1;
-    color:  white;
-    border-radius: 12px;
+  background: #315EA1;
+  color:  white;
+  border-radius: 12px;
+  margin: 80px;
 
 }
 
 /* login page css below: */
+
 body {
   background-color: lemonchiffon;
   font-size: 1.6rem;
@@ -51,25 +51,6 @@ p {
   position: relative;
 }
 
-/* a,
-a:link,
-a:visited,
-a:active {
-  color: #3ca9e2;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-a:focus, a:hover,
-a:link:focus,
-a:link:hover,
-a:visited:focus,
-a:visited:hover,
-a:active:focus,
-a:active:hover {
-  color: #329dd5;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-} */
 
 #login-form-wrap {
   background-color: #fff;
@@ -104,9 +85,6 @@ input[type="email"] {
   border: 1px solid #c2c0ca;
   font-style: normal;
   font-size: 16px;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
   position: relative;
   display: inline-block;
   background: none;
@@ -240,6 +218,7 @@ input[type=submit] {
   background-color: #04AA6D;
   color: white;
   cursor: pointer;
+  margin: 0px;
 }
 
 input[type=submit]:hover {
@@ -490,13 +469,258 @@ footer {
   bottom: 0;
   width: 100%;
   height: 50px;
-  background-color: lightgray;
+  background-color: grey;
   color: white;
   text-align: center;
-  position: fixed;
+  
   
 }
 
 .book1 {
   margin: 20px;
+}
+
+/* myprofile.html */
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ddd;
+  align-items: center;
+  justify-content: center;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.container{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 20px 20px;
+}
+
+table {
+  padding: 40px 40px ;
+  font-size: 20px;
+  text-align: left;
+}
+
+.box{
+  flex: 20%;
+  display: table;
+  align-items: center;
+  text-align: center;
+  background-color: #315EA1;
+  color: #fff;
+  padding: 30px 30px;
+  border-radius: 0px;
+  border: none;
+  height: 300px;
+
+}
+
+.box img{
+  border-radius: 100%;
+  border: 2px solid #fff;
+  height: 200px;
+  width: 200px;
+}
+
+.box ul tr{
+  margin-top: 30px;
+  font-size: 2px;
+  text-align: center;
+}
+.box ul li tr td{
+  list-style: none;
+  margin-top: 50px;
+  font-weight: 100;
+  text-align: start;
+}
+
+.box ul li tr td i{
+  cursor: pointer;
+  margin: 10px;
+  font-size: 30px;
+}
+
+.box ul li tr td i:hover{
+  opacity: 0.6;
+}
+
+.About{
+  margin-left: 20px;
+  flex: 50%;
+  display: table;
+  padding: 30px 30px;
+  font-size: 15px;
+  background-color: #fff;
+  border-radius: 0px;
+}
+
+.About h3 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.About ul li{
+  list-style: none;
+}
+
+.About ul{
+  margin-top: 20px;
+}
+
+.contact {
+  bottom: 25px;
+}
+
+@media screen and (max-width: 1068px) {
+  .container{
+      display: table;
+  }
+
+  .box{
+      width: 100%;
+  }
+
+  .About{
+      width: 100%;
+      margin: 0;
+      margin-top: 20px;
+  }
+
+  .About h3{
+      text-align: center;
+  }
+}
+
+.my_collection {
+  margin: 15px;
+  border-radius: 2px;
+}
+
+/* my_collection */
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position:absolute;
+  z-index: 1;
+  top: 80px;
+  left: 0;
+  background-color: #315EA1;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 20px 10px 16px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: black;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 6px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+body {
+  overflow: scroll;
+}
+
+.my_collection_section {
+ /* The width of your document, I suppose */
+ width:100%;
+ margin: 0;
+ white-space:nowrap; 
+ overflow-x: scroll; 
+ 
+}
+
+.book_cover {
+  margin-right: 80px; 
+  height: 200px;
+  
+}
+
+.pic-container {
+/* As large as it needs to be */
+ width: 1500px;
+ row-gap: 25px;
+}​
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+.about_body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.about-us{
+  height: 100vh;
+  width: 100%;
+  padding: 5px 20px;
+  background: #ddd;
+}
+.about{
+  width: 1100px;
+  max-width: 85%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.text{
+  width: 500px;
+}
+.text h2{
+  font-size: 90px;
+  font-weight: 600;
+  margin-bottom: 10px;
+
+}
+.text h5{
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.text p{
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 1px;
 }

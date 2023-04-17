@@ -10,10 +10,10 @@
   <body>
     <nav class="topnav" class="fixed-top">
         <div class="container-fluid">
-            <span><img src="logocow.png" alt=""></span>
-          <span class="topnavhead">E-library</span>
-           <img src="user.png" alt="" class="user_icon">
-            <button class="addbook">Add book</button>
+            <span onclick="window.location.href = 'login_elibrary.html';"><img src="logocow.png" alt=""></span>
+          <span class="topnavhead" onclick="window.location.href = 'login_elibrary.html';">E-library</span>
+           <img src="user.png" alt="" onclick="window.location.href = 'myprofile.html';" class="user_icon">
+            <button class="addbook" onclick="window.location.href = 'my_collection.html';">Add book</button>
        
         </div>
       </nav>
@@ -28,7 +28,7 @@
   
           <!-- A div with card class for the card  -->
           <div class="card">
-            <img src="book1.jpg" alt="Lago di Braies" class="card_image">
+            <img src="book1.jpg" alt="Lago di Braies" onclick="window.location.href = 'book_description.html';" class="card_image">
       
             <!-- A div with card__details class to hold the details in the card  -->
             <div class="card__details">
@@ -43,7 +43,7 @@
               <span class="tag">by:Robin MacArthur</span>
               <p>In this evocative first novel, a young woman returns to her rural Vermont hometown in the wake of a devastating storm to search for ... </p>
       
-              <button>Read more</button>
+              <button onclick="window.location.href = 'book_description.html';">Read more</button>
             </div>
       
       
