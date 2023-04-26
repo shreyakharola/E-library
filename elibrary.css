@@ -282,14 +282,14 @@ margin: 80px;
   /* Add border */
   border: 1px solid #bacdd8;
   width: 200px;
-  height: 420px;
+  height: auto;
   /* Add space between the border and the content */
   padding: 8px;
 
   border-radius: 0px;
 }
 
-.tag {
+.genre {
   padding: 4px 8px;
   border: 1px solid #e5eaed;
   margin: 0;
@@ -303,8 +303,12 @@ margin: 80px;
 .name {
   font-size: 15px;
   font-weight: 600;
+  margin-top: 14px;
+}
 
-  margin-top: 16px;
+.author {
+  font-size: 14px;
+  font-weight: 400;
 }
 
 /* Style p element */
