@@ -1,6 +1,5 @@
-<?php 
-error_reporting(0);
-?>
+<?php session_start();?> 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,25 +19,38 @@ error_reporting(0);
        
         </div>
       </nav>
-     <main>
-      <form action="connection.php" method="post" enctype="multipart/form-data">
+     <div class="addbook_form">
+      <?php 
+      if(isset($_SESSION['status']) && $_SESSION != '')
+      {
+        ?>
+        <div class="alert"> <?php echo $_SESSION['status']; ?>
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+             This is an alert box.
+        </div>
+
+        <?php
+        unset($_SESSION['status']);
+      }
+      ?>
+      
+    
+
+      <form action="upload.php" method="post" enctype="multipart/form-data" accept="image/x-png,image/gif,image/jpeg">
         <label for="book_name">Book Name:</label>
         <input type="text" id="book_name" name="book_name" required><br><br>
-      
         <label for="author_name">Author Name:</label>
         <input type="text" id="author_name" name="author_name" required><br><br>
-      
-        <label for="book_image">Book Image:</label>
-        <input type="file" id="book_image" name="book_image" value="upload_image"><br><br>
-        <label for="book_image">Book:</label>
-        <input type="file" id="book_pdf" name="book_pdf" value="upload_file">
-        <input type="submit" value="Save">
+        <label for="book_description">book_description:</label>
+        <input type="text" id="book_description" name="book_description" required>
+        <label for="book_image">Upload Book Image:</label>
+        <input type="file" id="book_image" name="book_image" value="upload_image" required><br><br>
+        <label for="book_pdf" required>Upload Book:</label>
+        <input type="file" id="book_pdf" name="book_pdf" value="upload_file" required>
+        <input type="submit" value="submit" name="sumbit">
       </form>
-    </main>
+      </div>
 
-    <?php
-    $folder = "/uploads";
-    echo $_FILES["book_image"];
-?>
     </body>
     </html>
+    
