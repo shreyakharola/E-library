@@ -319,7 +319,7 @@ p {
 }
 
 /* Style button element */
-button {
+.read_more {
   border: none;
   padding: 6px 10px;
   border-radius: 50px;
@@ -341,8 +341,8 @@ button {
   padding: 3px 2px 2px 2px;
 }
 
-button:focus,
-button:hover {
+.read_more:focus,
+.read_more:hover {
   background-color: #0077ff;
   color: #e0efff;
 }
@@ -757,5 +757,18 @@ addbook.php page css */
 }
 
 .addbook_form {
+  margin: 10px;
+  padding: 10px;
+}
+
+.add_book_button {
+  background: red;
+	color: white;
+	border-style: outset;
+	border-color: #0066A2;
+	height: 50px;
+	width: 100px;
+	font: bold 15px arial,sans-serif;
+	text-shadow: none;
   text-align: center;
 }

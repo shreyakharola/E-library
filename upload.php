@@ -1,42 +1,47 @@
 <?php 
-session_start();
-$conn = mysqli_connect("localhost","root","","e-library");
 
-//check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-else
- {
-      echo "connected SUCCESSFULLY!!!";
- }
 
-if(isset($_POST['submit']))
-{
-    $book_name = $_POST['book_name'];
-    $author_name = $_POST['author_name'];
-    $book_description = $_POST['book_description'];
-    $book_image = $_FILES['book_image']['name'];
-    $book_pdf = $_FILES['book_pdf']['name'];
+$host= "localhost";
+$user= "root";
+$password= "";
+$db= "e-library";
 
-    $query = "INSERT INTO addbook (book_name,author_name,description_book,book_image,book_pdf) VALUES ('$book_name','$author_name','$book_description','$book_image','$book_pdf')";
-    $query_run = mysqli_query($conn, $query);
+    try{
+        $pdo =  new PDO("mysql:host=$host;dbname=$db",$user,$password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // echo "connceted successfully";
+        
+     }catch(PDOException $e){
+         die($e->getMessage());
+     }
 
-    if($query_run)
-    {
-        move_uploaded_file($_FILES["book_image"]["tmp_name"], "uploads/book_image/".$_FILES["submit"]["name"]);
-        move_uploaded_file($_FILES["book_image"]["tmp_name"], "uploads/book_pdf/".$_FILES["submit"]["name"]);
-        $_SESSION['status'] = "Record Stored SUCCESSFULLY";
-        header('location:add_book.php');
 
+if($_GET['submitted']) {
+    echo "<pre>";
+    print_r($_GET);
+    // die('data is coming');
+    
+    $book_name = $_GET['book_name'];
+    $author_name = $_GET['author_name'];
+    $book_description = $_GET['book_description'];
+    // $book_image = $_FILES['book_image'];
+    
+     echo $book_name;
+     echo $author_name;
+     echo $book_description; 
+    //  echo $book_image;
+    $query = "INSERT INTO addbook (book_name,author_name,description_book) VALUES (:book_name,:author_name,:book_description)";
+    $stmt = $pdo->prepare($query);
+   $result = $stmt->execute([
+        ':book_name' => $book_name,
+        ':author_name' => $author_name,
+        ':book_description' => $book_description
+    ]);
+      if($result) {
+        echo "book added successfully";
+      }
+      else {
+        echo "some error occured.";
+      }
     }
-    else
-    {
-        $_SESSION['status'] = "OOPS!!!Record NOT inserted";
-        header('location:add_book.php');
-
-
-    }
-
-}
-?>
+    ?>

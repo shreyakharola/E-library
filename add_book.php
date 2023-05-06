@@ -36,20 +36,22 @@
       
     
 
-      <form action="upload.php" method="post" enctype="multipart/form-data" accept="image/x-png,image/gif,image/jpeg">
+   
+      <form action="upload.php" method="get" enctype="multipart/form-data" accept="image/x-png,image/gif,image/jpeg">
         <label for="book_name">Book Name:</label>
         <input type="text" id="book_name" name="book_name" required><br><br>
         <label for="author_name">Author Name:</label>
         <input type="text" id="author_name" name="author_name" required><br><br>
         <label for="book_description">book_description:</label>
-        <input type="text" id="book_description" name="book_description" required>
-        <label for="book_image">Upload Book Image:</label>
+        <input type="text" id="book_description" name="book_description" style="height:200px" required>
+        <!-- <label for="book_image">Upload Book Image:</label>
         <input type="file" id="book_image" name="book_image" value="upload_image" required><br><br>
         <label for="book_pdf" required>Upload Book:</label>
-        <input type="file" id="book_pdf" name="book_pdf" value="upload_file" required>
-        <input type="submit" value="submit" name="sumbit">
+        <input type="file" id="book_pdf" name="book_pdf" value="upload_file" required> -->
+        <button class="add_book_button" type="submit" value="submit" name="submitted">Submit</button>
       </form>
       </div>
+  
 
     </body>
     </html>
