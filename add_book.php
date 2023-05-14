@@ -43,12 +43,18 @@
         <label for="author_name">Author Name:</label>
         <input type="text" id="author_name" name="author_name" required><br><br>
         <label for="book_description">book_description:</label>
-        <input type="text" id="book_description" name="book_description" style="height:200px" required>
+        <input type="text" id="book_description" name="book_description" style="height:200px" required><br><br>
         <!-- <label for="book_image">Upload Book Image:</label>
         <input type="file" id="book_image" name="book_image" value="upload_image" required><br><br>
         <label for="book_pdf" required>Upload Book:</label>
         <input type="file" id="book_pdf" name="book_pdf" value="upload_file" required> -->
+
+        <label for="fileToUpload">Book Upload:</label>
+        <input type="file" name="fileToUpload" id="fileToUpload">
+
+        <div class="addbook_submit">
         <button class="add_book_button" type="submit" value="submit" name="submitted">Submit</button>
+        </div>     
       </form>
       </div>
   
