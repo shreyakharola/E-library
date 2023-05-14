@@ -234,8 +234,8 @@ input[type=submit]:hover {
   background-color: #e0efff;
   margin: auto;
   display: block;
-  float: right;
   cursor: pointer;
+  float: right;
 }
 
 .user_icon {
