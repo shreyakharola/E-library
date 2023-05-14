@@ -227,12 +227,12 @@ input[type=submit]:hover {
 
 .addbook {
   border: none;
-  padding: 6px 10px;
+  padding: 6px 10px 10px;
   float: right;
-  font-weight: 400;
-  color: red;
-  background-color: #e0efff;
-  margin: auto;
+  font-weight: 600;
+  color:#e0efff;
+  background-color: red;
+  margin: 18px;
   display: block;
   cursor: pointer;
   float: right;
@@ -244,7 +244,7 @@ input[type=submit]:hover {
   height: 30px;
   padding: 5px 5px;
   float: right;
-  margin: 8px 20px 0px;
+  margin: 18px 20px 0px;
 }
 
 
@@ -607,7 +607,17 @@ table {
 .my_collection {
   margin: 15px;
   border-radius: 2px;
+  background-color: rgb(7, 115, 204);
+  border: none;
+  padding: 6px 10px;
+  float: right;
+  font-weight: 400;
+  color: white;
 }
+ .my_collection:hover {
+  background-color: white;
+  color: #008CBA
+ }
 
 /* my_collection */
 
@@ -621,6 +631,21 @@ table {
   background-color: #315EA1;
   overflow-x: hidden;
   padding-top: 20px;
+}
+
+.edit_profile {
+  margin: 15px;
+  border-radius: 2px;
+  background-color: white;
+  border: none;
+  padding: 6px 10px;
+  float: right;
+  font-weight: 400;
+  color: rgb(11, 140, 247);
+}
+.edit_profile:hover {
+  background-color: rgb(11, 140, 247);
+  color: white;
 }
 
 .sidenav a {
