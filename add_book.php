@@ -37,7 +37,7 @@
     
 
    
-      <form action="upload.php" method="get" enctype="multipart/form-data" accept="image/x-png,image/gif,image/jpeg">
+      <form action="upload.php" method="post" enctype="multipart/form-data" accept="image/x-png,image/gif,image/jpeg">
         <label for="book_name">Book Name:</label>
         <input type="text" id="book_name" name="book_name" required><br><br>
         <label for="author_name">Author Name:</label>
@@ -50,7 +50,7 @@
         <input type="file" id="book_pdf" name="book_pdf" value="upload_file" required> -->
 
         <label for="fileToUpload">Book Upload:</label>
-        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="file" name="book_image" id="fileToUpload">
 
         <div class="addbook_submit">
         <button class="add_book_button" type="submit" value="submit" name="submitted">Submit</button>
