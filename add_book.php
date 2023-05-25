@@ -12,9 +12,9 @@
   <body>
     <nav class="topnav" class="fixed-top">
         <div class="container-fluid">
-            <span onclick="window.location.href = 'login_elibrary.html';"><img src="logocow.png" alt=""></span>
-          <span class="topnavhead" onclick="window.location.href = 'login_elibrary.html';">E-library</span>
-           <img src="user.png" alt="" onclick="window.location.href = 'myprofile.html';" class="user_icon">
+            <span onclick="window.location.href = 'login_elibrary.html';" class="topnavhead"><img src="logocow.png" class="logo_cow" alt=""></span>
+          <span onclick="window.location.href = 'login_elibrary.html';" class="topnavhead" >E-library</span>
+          <img src="user.png" alt="" onclick="window.location.href = 'myprofile.html';" class="user_icon">
             
 
         </div>
@@ -36,14 +36,14 @@
       
     
 
-   
-      <form action="upload.php" method="post" enctype="multipart/form-data" accept="image/x-png,image/gif,image/jpeg">
-        <label for="book_name">Book Name:</label>
+      <main class="book_upload">  
+      <form action="upload.php" method="post" enctype="multipart/form-data" accept="image/x-png,image/gif,image/jpeg" id="addbook_form">
+        <label for="book_name">Book Name:</label><br><br>
         <input type="text" id="book_name" name="book_name" required><br><br>
-        <label for="author_name">Author Name:</label>
+        <label for="author_name">Author Name:</label><br><br>
         <input type="text" id="author_name" name="author_name" required><br><br>
-        <label for="book_description">book_description:</label>
-        <input type="text" id="book_description" name="book_description" style="height:200px" required><br><br>
+        <label for="book_description">book_description:</label><br><br>
+        <textarea id="book_textarea" rows="8" cols="100" name="book_description" style="background-color:#ddd; font-size:15px" required>    Write Book Description............. </textarea><br><br>
         <!-- <label for="book_image">Upload Book Image:</label>
         <input type="file" id="book_image" name="book_image" value="upload_image" required><br><br>
         <label for="book_pdf" required>Upload Book:</label>
@@ -56,6 +56,7 @@
         <button class="add_book_button" type="submit" value="submit" name="submitted">Submit</button>
         </div>     
       </form>
+    </main>
       </div>
   
 

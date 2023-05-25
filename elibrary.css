@@ -1,12 +1,24 @@
 .topnav {
     background: #315EA1 ;
     font-size:xx-large;
+    padding: 10px 10px;
+    height: 80px;
+}
+.logo_cow {
+  height: 60px;
+  width: 40px;
+  padding: 4px 0px 28px;
 }
 .topnavhead {
-    color: white;
-    top: 0;
-    margin: 0;
-}
+  color: white;
+  padding: 13px 2px 6px;
+  float: left;
+  font-weight: 00;
+  margin: 5px;
+  display: block;
+  cursor: pointer;
+  }
+
 .sticky {
     position: fixed;
     top: 0;
@@ -37,12 +49,12 @@
 
 body {
   background-color: lemonchiffon;
-  font-size: 1.6rem;
+  font-size: 1.0rem;
   font-family: "Open Sans", sans-serif;
   color: #2b3e51;
 }
 
-h2 {
+.login_header {
   font-weight: 300;
   text-align: center;
 }
@@ -76,7 +88,7 @@ input {
   border-radius: 4px;
 }
 
-input[type="text"],
+ input[type="text"],
 input[type="email"] {
   width: 100%;
   padding: 0 0 0 10px;
@@ -238,6 +250,8 @@ input[type=submit]:hover {
   float: right;
 }
 
+
+
 .user_icon {
   position: relative;
   width: 30px;
@@ -269,7 +283,7 @@ body {
 grid-template-columns: repeat(4, 1fr);
 grid-auto-rows: auto;
 margin: 80px;
-  margin-top: 0;
+  margin-top: 10px;
     display: grid;
   column-gap: 2em;
   row-gap: 2em;
@@ -310,6 +324,7 @@ margin: 80px;
   font-size: 14px;
   font-weight: 400;
 }
+
 
 /* Style p element */
 p {
@@ -352,9 +367,9 @@ p {
   box-sizing: border-box;
 }
   
-#book_description {
+/* #book_description {
   padding-top: 20px;
-}
+} */
 
 .book1{
   float: left;
@@ -566,10 +581,9 @@ table {
 }
 
 .About h3 {
-  text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: 30px;
-  font-weight: 500;
+  font-size: 25px;
+  font-weight: 300;
 }
 
 .About ul li{
@@ -738,7 +752,7 @@ body {
 }
 .text h2{
   font-size: 90px;
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 10px;
 
 }
@@ -797,4 +811,69 @@ addbook.php page css */
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+input[name="book_name"],
+input[name="author_name"] {
+  width: 50%;
+  padding: 0 0 0 10px;
+  margin: 0;
+  color: #8a8b8e;
+  border: 1px solid #c2c0ca;
+  font-style: normal;
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+  background: none;
+}
+input[name="book_name"]:focus,
+input[name="author_name"]:focus {
+  border-color: #3ca9e2;
+}
+input[name="book_name"]:focus:invalid,
+input[name="author_name"]:focus:invalid {
+  color: #cc1e2b;
+  border-color: #cc1e2b;
+}
+input[name="book_name"]:valid ~ .validation,
+input[name="author_name"]:valid ~ .validation {
+  display: block;
+  border-color: #0C0;
+}
+input[name="book_name"]:valid ~ .validation span,
+input[name="author_name"]:valid ~ .validation span {
+  background: #0C0;
+  position: absolute;
+  border-radius: 6px;
+}
+input[name="book_name"]:valid ~ .validation span:first-child,
+input[name="author_name"]:valid ~ .validation span:first-child {
+  top: 30px;
+  left: 14px;
+  width: 20px;
+  height: 3px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+input[name="book_name"]:valid ~ .validation span:last-child,
+input[name="author_name"]:valid ~ .validation span:last-child {
+  top: 35px;
+  left: 8px;
+  width: 11px;
+  height: 3px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+textarea {
+  width: 50%;
+  padding: 0 0 0 10px;
+  margin: 0;
+  color: #8a8b8e;
+  border: 1px solid #c2c0ca;
+  font-style: normal;
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+  background: none;
 }
