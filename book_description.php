@@ -35,10 +35,4 @@
           <br><p class="downloads">Downloads: 1000</p><br>
   <button class="download-btn">Download</button>
 </div>
-</div>
-<?php 
-include('includes/footer.php');
-?>
-
-</body>
-</html>
+<?php include('includes/footer.php');?>

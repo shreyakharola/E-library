@@ -33,8 +33,6 @@
         unset($_SESSION['status']);
       }
       ?>
-      
-    
 
       <main class="book_upload">  
       <form action="upload.php" method="post" enctype="multipart/form-data" accept="image/x-png,image/gif,image/jpeg" id="addbook_form">
@@ -44,22 +42,14 @@
         <input type="text" id="author_name" name="author_name" required><br><br>
         <label for="book_description">book_description:</label><br><br>
         <textarea id="book_textarea" rows="8" cols="100" name="book_description" style="background-color:#ddd; font-size:15px" required>    Write Book Description............. </textarea><br><br>
-        <!-- <label for="book_image">Upload Book Image:</label>
-        <input type="file" id="book_image" name="book_image" value="upload_image" required><br><br>
-        <label for="book_pdf" required>Upload Book:</label>
-        <input type="file" id="book_pdf" name="book_pdf" value="upload_file" required> -->
-
         <label for="fileToUpload">Book Upload:</label>
         <input type="file" name="book_image" id="fileToUpload">
-
         <div class="addbook_submit">
         <button class="add_book_button" type="submit" value="submit" name="submitted">Submit</button>
         </div>     
       </form>
     </main>
       </div>
-  
-
-    </body>
-    </html>
+      
+      <?php include('includes/footer.php');?>
     

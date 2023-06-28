@@ -75,6 +75,4 @@
             </ul>
         </div>
     </div>
-    <footer> &copy; 2023 Book Title. All rights reserved.</footer>
-  </body>
-  </html>
+    <?php include('includes/footer.php');?>
