@@ -78,7 +78,7 @@ p {
   padding: 0 60px;
 }
 
-/* input {
+input {
   display: block;
   box-sizing: border-box;
   width: 100%;
@@ -86,7 +86,7 @@ p {
   height: 60px;
   line-height: 60px;
   border-radius: 4px;
-} */
+}
 
  input[type="text"],
 input[type="email"],
@@ -156,6 +156,8 @@ input[type="password"]:valid ~ .validation span:last-child {
   right: 15px;
   top: 0px;
 }
+
+
 
 input[type="submit"] {
   border: none;
@@ -732,7 +734,7 @@ body {
 
 
 
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
 
 .about_body{
   margin: 0;

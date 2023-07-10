@@ -14,10 +14,7 @@
         <div class="container-fluid">
             <span onclick="window.location.href = 'login_elibrary.html';" class="topnavhead"><img src="logocow.png" class="logo_cow" alt=""></span>
           <span onclick="window.location.href = 'login_elibrary.html';" class="topnavhead" >E-library</span>
-          <img src="user.png" alt="" onclick="window.location.href = 'myprofile.html';" class="user_icon">
-            
-
-        </div>
+ </div>
       </nav>
      <div class="addbook_form">
       <?php 

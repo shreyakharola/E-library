@@ -1,6 +1,6 @@
 <?php
 require_once 'connection.php';
-// echo "hello";
+
 $firstname = $lastname = $username = $email = $password = $confirm_password = '';
 $firstname_err = $lastname_err = $username_err = $email_err = $password_err = $confirm_password_err = '';
 
