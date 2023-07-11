@@ -33,12 +33,12 @@
 
       <main class="book_upload">  
       <form action="upload.php" method="post" enctype="multipart/form-data" accept="image/x-png,image/gif,image/jpeg" id="addbook_form">
-        <label for="book_name">Book Name:</label><br><br>
-        <input type="text" id="book_name" name="book_name" required><br><br>
-        <label for="author_name">Author Name:</label><br><br>
-        <input type="text" id="author_name" name="author_name" required><br><br>
-        <label for="book_description">book_description:</label><br><br>
-        <textarea id="book_textarea" rows="8" cols="100" name="book_description" style="background-color:#ddd; font-size:15px" required>    Write Book Description............. </textarea><br><br>
+        <label for="book_name">Book Name:</label>
+        <input type="text" id="book_name" name="book_name" placeholder="Enter Book name" required><br><br>
+        <label for="author_name">Author Name:</label>
+        <input type="text" id="author_name" name="author_name" placeholder="Enter Author name" required><br><br>
+        <label for="book_description">Book description:</label>
+        <textarea type="text" class="description-input" name="book_description" placeholder="Write Book Description" rows="8" cols="200" required></textarea><br><br><br>
         <label for="fileToUpload">Book Upload:</label>
         <input type="file" name="book_image" id="fileToUpload">
         <div class="addbook_submit">

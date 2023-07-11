@@ -5,7 +5,6 @@ if(isset($_POST['submitted'])) {
     $book_name = $_POST['book_name'];
     $author_name = $_POST['author_name'];
     $book_description = $_POST['book_description'];
-    
     $book_image = isset($_FILES["book_image"]["name"]) ? $_FILES["book_image"]["name"] : "";
     $target_dir = "uploads/";
     $timestamp = time();
@@ -39,7 +38,7 @@ if(isset($_POST['submitted'])) {
             $filesize = $_FILES["book_image"]["size"];
             $filetype = $_FILES["book_image"]["type"];
 
-            $query = "INSERT INTO addbook (book_name, author_name, description_book, book_image) VALUES (:book_name, :author_name, :book_description, :book_image)";
+            $query = "INSERT INTO addbook (book_name, author_name, book_description, book_image) VALUES (:book_name, :author_name, :book_description, :book_image)";
             $stmt = $pdo->prepare($query);
             $result = $stmt->execute([
                 ':book_name' => $book_name,
