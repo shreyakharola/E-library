@@ -821,7 +821,8 @@ addbook.php page css */
 }
 
 input[name="book_name"],
-input[name="author_name"] {
+input[name="author_name"],
+textarea[name="book_description"] {
   width: 50%;
   padding: 0 0 0 10px;
   margin: 0;
@@ -833,30 +834,35 @@ input[name="author_name"] {
   display: inline-block;
   background: none;
 }
+
 input[name="book_name"]:focus,
-input[name="author_name"]:focus {
+input[name="author_name"]:focus,
+textarea[name="book_description"]:focus {
   border-color: #3ca9e2;
 }
 input[name="book_name"]:focus:invalid,
-input[name="author_name"]:focus:invalid {
+input[name="author_name"]:focus:invalid,
+textarea[name="book_description"]:focus:invalid {
   color: #cc1e2b;
   border-color: #cc1e2b;
 }
 input[name="book_name"]:valid ~ .validation,
-input[name="author_name"]:valid ~ .validation {
+input[name="author_name"]:valid ~ .validation,
+textarea[name="book_description"]:valid ~ .validation {
   display: block;
   border-color: #0C0;
 }
 input[name="book_name"]:valid ~ .validation span,
-input[name="author_name"]:valid ~ .validation span {
+input[name="author_name"]:valid ~ .validation span,
+textarea[name="book_description"]:valid ~ .validation span {
   background: #0C0;
   position: absolute;
   border-radius: 6px;
 }
 input[name="book_name"]:valid ~ .validation span:first-child,
 input[name="author_name"]:valid ~ .validation span:first-child {
-  top: 30px;
-  left: 14px;
+  top: 20px;
+  left: 12px;
   width: 20px;
   height: 3px;
   -webkit-transform: rotate(-45deg);
@@ -864,17 +870,17 @@ input[name="author_name"]:valid ~ .validation span:first-child {
 }
 input[name="book_name"]:valid ~ .validation span:last-child,
 input[name="author_name"]:valid ~ .validation span:last-child {
-  top: 35px;
-  left: 8px;
-  width: 11px;
+  top: 25px;
+  left: 6px;
+  width: 8px;
   height: 3px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-textarea {
+/* textarea {
   width: 50%;
-  height: 30%;
+  height: 50%;
   padding: 0 0 0 10px;
   margin: 0;
   color: #8a8b8e;
@@ -884,4 +890,4 @@ textarea {
   position: relative;
   display: inline-block;
   background: none;
-}
+} */
