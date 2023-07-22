@@ -1,9 +1,14 @@
-<?php
-require_once 'connection.php';
+<?php 
+
+    session_start();
+	include("connection.php");
+
 
 $firstname = $lastname = $username = $email = $password = $confirm_password = '';
 $firstname_err = $lastname_err = $username_err = $email_err = $password_err = $confirm_password_err = '';
-
+function random_num() {
+    return rand();
+}
 if (isset($_POST['submitted'])) {
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
@@ -63,7 +68,7 @@ if (isset($_POST['submitted'])) {
         $confirm_password_err = 'Please confirm password';
     } else {
         if ($password !== $confirm_password) {
-            $confirm_password_err = 'Passwords do not match';
+            $confirm_password_err = 'The password do not match';
         }
     }
 
@@ -77,10 +82,12 @@ if (isset($_POST['submitted'])) {
     }
 
     if (empty($firstname_err) && empty($lastname_err) && empty($username_err) && empty($email_err) && empty($password_err) && empty($confirm_password_err)) {
-        $query = "INSERT INTO registration_form (firstname, lastname, username, email, password, confirm_password) 
-                  VALUES (:firstname, :lastname, :username, :email, :password, :confirm_password)";
+        $user_id = random_num(20);
+        $query = "INSERT INTO registration_form (user_id, firstname, lastname, username, email, password, confirm_password) 
+                  VALUES (:user_id, :firstname, :lastname, :username, :email, :password, :confirm_password)";
         $stmt = $pdo->prepare($query);
         $result = $stmt->execute([
+            ':user_id' => $user_id,
             ':firstname' => $firstname,
             ':lastname' => $lastname,
             ':username' => $username,
@@ -90,7 +97,14 @@ if (isset($_POST['submitted'])) {
         ]);
 
         if ($result) {
-            echo "You have registered successfully";
+            $_SESSION['registration_success'] = true;
+            
+            // Redirect the user to the login page
+            header("Location: login_page.php");
+            exit();
+            
+            // Redirect the user to the login page
+           
         } else {
             echo "Some error occurred.";
         }

@@ -1,8 +1,11 @@
 <?php 
+
 $host = "localhost";
 $user = "root";
 $password = "";
 $db = "e-library";
+
+
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $password);

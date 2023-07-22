@@ -186,6 +186,7 @@ input[type="submit"] {
 }
 
 
+
 /* login with linkdn: */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
 body {
@@ -257,7 +258,17 @@ input[type=submit]:hover {
   cursor: pointer;
 }
 
-
+.logout {
+  border: none;
+  padding: 6px 10px 10px;
+  float: right;
+  font-weight: 600;
+  color:#e0efff;
+  background-color: red;
+  margin: 18px;
+  display: block;
+  cursor: pointer;
+}
 
 .user_icon {
   position: relative;
