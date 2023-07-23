@@ -11,9 +11,9 @@
   <body>
       <nav class="topnav" class="fixed-top">
         <div class="container-fluid">
-            <span onclick="window.location.href = 'login_elibrary.html';" class="topnavhead"><img src="logocow.png" class="logo_cow" alt=""></span>
-          <span onclick="window.location.href = 'login_elibrary.html';" class="topnavhead" >E-library</span>
-          <button class="my_collection" onclick="window.location.href = 'my_collection.html';" >My collection</button>
+            <span onclick="window.location.href = 'login_elibrary.php';" class="topnavhead"><img src="logocow.png" class="logo_cow" alt=""></span>
+          <span onclick="window.location.href = 'login_elibrary.php';" class="topnavhead" >E-library</span>
+          <button class="my_collection" onclick="window.location.href = 'my_collection.php';" >My collection</button>
         </div>
       </nav>
 
@@ -49,7 +49,7 @@
                       <td>Web Developer</td>
                   </tr>
                   <!-- <tr>
-                    <td><a href="edit_profile.html">Edit</a></td>
+                    <td><a href="edit_profile.php">Edit</a></td>
                   </tr> -->
               </tbody>
           </table>

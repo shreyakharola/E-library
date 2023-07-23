@@ -23,7 +23,7 @@
 			if ($row && password_verify($password, $row['password'])) {
 				$_SESSION["login"] = true;
 				$_SESSION["user_id"] = $row["user_id"];
-				header("Location: login_elibrary.php");
+				echo '<script>alert("Welcome,  to the E-library "); window.location.href = "login_elibrary.php";</script>';
 				addLoginSuccessMessage($username);
 				exit;
 			} else {

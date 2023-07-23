@@ -27,9 +27,23 @@
 
 
 .content_elibrary {
-    max-width: 400px;
-    padding: 30px;
-    margin: 200px 50px 50px 490px;
+  color: white;
+  text-align: center;
+  font-size: xx-large;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  padding: 60px;
+  margin: 100px 100px 100px 150px;
+}
+
+.bgimg-1 {
+  background-image: url(elibrary_bg.jpg);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  position: absolute;
 }
 
 .signin {
@@ -67,15 +81,15 @@ p {
 #login-form-wrap {
   background-color: #fff;
   width: 35%;
-  margin: 30px auto;
+  margin: 5px auto;
   text-align: center;
-  padding: 20px 0 0 0;
+  padding: 5px 5px 5px 5px;
   border-radius: 4px;
-  box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.2);
 }
 
 #login-form {
-  padding: 0 60px;
+  padding: 0 30px;
 }
 
 input {
@@ -176,12 +190,13 @@ input[type="submit"] {
 }
 
 
+
 #create-account-wrap {
   background-color: #eeedf1;
   color: #8a8b8e;
-  font-size: 14px;
-  width: 100%;
-  padding: 10px 0;
+  font-size: 12px;
+  width: auto;
+  padding: 2px;
   border-radius: 0 0 4px 4px;
 }
 
@@ -222,16 +237,19 @@ a:link
 {
     color:#FFFFFF;
 }
-.fb {
-  background-color: #3B5998;
+.container_register {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 20px 20px;
 }
-
-.twitter {
-  background-color: #55ACEE;
-}
-
 .google {
   background-color: #dd4b39;
+  padding: 10px 10px;
+  margin: 0px;
+  color: white;
+  font-size: medium;
+  text-decoration: none;
 }
 
 /* style the submit button */
@@ -501,17 +519,17 @@ p {
 }
 
 footer {
+  position: absolute;
   font-size: small;
-  font-display: block;
+  display: block; 
   bottom: 0;
   width: 100%;
-  height: 50px;
+  height: 1.5rem;
   background-color: grey;
   color: white;
   text-align: center;
-  
-  
-}
+  }
+
 
 .book1 {
   margin: 20px;
@@ -772,7 +790,6 @@ body {
   font-size: 90px;
   font-weight: 400;
   margin-bottom: 10px;
-
 }
 .text h5{
   font-size: 22px;

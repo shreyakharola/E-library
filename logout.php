@@ -3,4 +3,4 @@ require 'connection.php';
 $_SESSION = [];
 session_unset();
 session_destroy();
-header("Location: login_page.php");
+echo '<script>alert("You have logged out SUCCESSFULLY!!"); window.location.href = "elibrary.php";</script>';

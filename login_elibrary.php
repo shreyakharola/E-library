@@ -1,9 +1,3 @@
-<?php 
-require_once 'functions.php';
-
-displayLoginSuccessMessages();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,9 +10,9 @@ displayLoginSuccessMessages();
   <body>
     <nav class="topnav" class="fixed-top">
       <div class="container-fluid">
-          <span onclick="window.location.href = 'login_elibrary.html';" class="topnavhead"><img src="logocow.png" class="logo_cow" alt=""></span>
-        <span onclick="window.location.href = 'login_elibrary.html';" class="topnavhead" >E-library</span>
-           <img src="user.png" alt="" onclick="window.location.href = 'myprofile.html';" class="user_icon">
+          <span onclick="window.location.href = 'login_elibrary.php';" class="topnavhead"><img src="logocow.png" class="logo_cow" alt=""></span>
+        <span onclick="window.location.href = 'login_elibrary.php';" class="topnavhead" >E-library</span>
+           <img src="user.png" alt="" onclick="window.location.href = 'myprofile.php';" class="user_icon">
             <button class="addbook" onclick="window.location.href = 'add_book.php';">Add book</button>
             <button class="logout" onclick="window.location.href = 'logout.php';">Log out</button>
         </div>
@@ -36,7 +30,7 @@ displayLoginSuccessMessages();
   
           <!-- A div with card class for the card  -->
           <div class="card">
-            <img onclick="window.location.href = 'book_description.html';" src="book1.jpg" alt="Harry Potter" class="card_image">
+            <img onclick="window.location.href = 'book_description.php';" src="book1.jpg" alt="Harry Potter" class="card_image">
       
             <!-- A div with card__details class to hold the details in the card  -->
             <div class="card__details">
@@ -51,14 +45,14 @@ displayLoginSuccessMessages();
               <span class="author">Robin MacArthur</span>
               <p>In this evocative first novel, a young woman returns to her rural Vermont hometown in the wake of a devastating storm to search for home but  ... </p>
       
-              <button class="read_more" onclick="window.location.href = 'book_description.html';">Read more</button>
+              <button class="read_more" onclick="window.location.href = 'book_description.php';">Read more</button>
             </div>
       
       
           </div>
 
           <div class="card">
-            <img onclick="window.location.href = 'book_description.html';" src="book2.jpg" alt="To kill a mockingbird" class="card_image">
+            <img onclick="window.location.href = 'book_description.php';" src="book2.jpg" alt="To kill a mockingbird" class="card_image">
       
             <!-- A div with card__details class to hold the details in the card  -->
             <div class="card__details">
@@ -80,7 +74,7 @@ displayLoginSuccessMessages();
 
           
           <div class="card">
-            <img onclick="window.location.href = 'book_description.html';" src="book3.jpg" alt="Harry Potter" class="card_image">
+            <img onclick="window.location.href = 'book_description.php';" src="book3.jpg" alt="Harry Potter" class="card_image">
       
             <!-- A div with card__details class to hold the details in the card  -->
             <div class="card__details">
@@ -105,7 +99,7 @@ displayLoginSuccessMessages();
         
             </div>
             <div class="card">
-              <img onclick="window.location.href = 'book_description.html';" src="book2.jpg" alt="Harry Potter" class="card_image">
+              <img onclick="window.location.href = 'book_description.php';" src="book2.jpg" alt="Harry Potter" class="card_image">
         
               <!-- A div with card__details class to hold the details in the card  -->
               <div class="card__details">
@@ -127,7 +121,7 @@ displayLoginSuccessMessages();
           </div>
  <!-- card 5 -->
  <div class="card">
-  <img onclick="window.location.href = 'book_description.html';" src="book1.jpg" alt="Harry Potter" class="card_image">
+  <img onclick="window.location.href = 'book_description.php';" src="book1.jpg" alt="Harry Potter" class="card_image">
 
   <!-- A div with card__details class to hold the details in the card  -->
   <div class="card__details">
@@ -149,7 +143,7 @@ displayLoginSuccessMessages();
         </div>
        <!-- card 6 -->
   <div class="card">
-    <img onclick="window.location.href = 'book_description.html';" src="book2.jpg" alt="Harry Potter" class="card_image">
+    <img onclick="window.location.href = 'book_description.php';" src="book2.jpg" alt="Harry Potter" class="card_image">
   
     <!-- A div with card__details class to hold the details in the card  -->
     <div class="card__details">
@@ -170,7 +164,7 @@ displayLoginSuccessMessages();
 </div>
      <!-- card 7 -->
   <div class="card">
-    <img onclick="window.location.href = 'book_description.html';" src="book1.jpg" alt="Harry Potter" class="card_image">
+    <img onclick="window.location.href = 'book_description.php';" src="book1.jpg" alt="Harry Potter" class="card_image">
   
     <!-- A div with card__details class to hold the details in the card  -->
     <div class="card__details">

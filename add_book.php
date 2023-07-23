@@ -12,8 +12,8 @@
   <body>
     <nav class="topnav" class="fixed-top">
         <div class="container-fluid">
-            <span onclick="window.location.href = 'login_elibrary.html';" class="topnavhead"><img src="logocow.png" class="logo_cow" alt=""></span>
-          <span onclick="window.location.href = 'login_elibrary.html';" class="topnavhead" >E-library</span>
+            <span onclick="window.location.href = 'login_elibrary.php';" class="topnavhead"><img src="logocow.png" class="logo_cow" alt=""></span>
+          <span onclick="window.location.href = 'login_elibrary.php';" class="topnavhead" >E-library</span>
  </div>
       </nav>
      <div class="addbook_form">

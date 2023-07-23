@@ -98,9 +98,8 @@ if (isset($_POST['submitted'])) {
 
         if ($result) {
             $_SESSION['registration_success'] = true;
-            
+            echo '<script>alert("YOU HAVE REGISTERED SUCCESSFULLY !!!!"); window.location.href = "login_page.php";</script>';
             // Redirect the user to the login page
-            header("Location: login_page.php");
             exit();
             
             // Redirect the user to the login page

@@ -11,8 +11,8 @@
   <body>
     <nav class="topnav" class="fixed-top">
       <div class="container-fluid">
-          <span onclick="window.location.href = 'login_elibrary.php';" class="topnavhead"><img src="logocow.png" class="logo_cow" alt=""></span>
-        <span onclick="window.location.href = 'login_elibrary.php';" class="topnavhead" >E-library</span>
+          <span onclick="window.location.href = 'elibrary.php';" class="topnavhead"><img src="logocow.png" class="logo_cow" alt=""></span>
+        <span onclick="window.location.href = 'elibrary.php';" class="topnavhead" >E-library</span>
         </div>
       </nav>
       <div id="login-form-wrap">
@@ -29,11 +29,17 @@
           </p>
         </form>
         <div id="create-account-wrap">
-          <p>forgot password? <a href="#">Click here</a><p>  
-          <p>Not a member? <a href="registration_form.html">Register</a><p>
-
+          <p>forgot password? <a href="#">Click here</a></p>  
+          <p>Not a member? <a href="registration_form.html">Register</a></p>
+          <h4 style="color: grey;">OR</h4>
+         <a href="#" class="google"><i class="fa fa-google fa-fw">
+                      </i> Login with Google+
+                    </a>
+                  
         </div><!--create-account-wrap-->
-      </div><!--login-form-wrap-->
+      <!--login-form-wrap-->
+                  
+            <!-- google login  -->
       <!-- partial -->
       
       <script>
