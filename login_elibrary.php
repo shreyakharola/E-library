@@ -1,191 +1,194 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>E-library home page</title>
-    <link rel="stylesheet" href="elibrary.css">
-  </head>
+<?php
+// Connect to the database
+require_once 'connection.php';
+
+// Number of books to display per page
+$itemsPerPage = 5;
+
+// Initialize the current page number
+$currentPage = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
+
+// Calculate the starting index for the SQL query
+$startIndex = ($currentPage - 1) * $itemsPerPage;
+
+// Initialize a variable to hold the search results
+$searchResults = null;
+$totalItems = 0;
+
+// Check if the search form was submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve the search query
+    $searchQuery = isset($_POST['search_query']) ? trim($_POST['search_query']) : '';
+
+    if (!empty($searchQuery)) {
+        // Fetch data from the database based on the search query
+        $query = "SELECT * FROM addbook 
+                  WHERE book_name LIKE :searchQuery 
+                  OR author_name LIKE :searchQuery 
+                  OR book_genre LIKE :searchQuery 
+                  OR book_description LIKE :searchQuery
+                  LIMIT :startIndex, :itemsPerPage";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindValue(':searchQuery', '%' . $searchQuery . '%');
+        $stmt->bindValue(':startIndex', $startIndex, PDO::PARAM_INT);
+        $stmt->bindValue(':itemsPerPage', $itemsPerPage, PDO::PARAM_INT);
+        $stmt->execute();
+        $searchResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Get the total number of search results
+        $queryCount = "SELECT COUNT(*) FROM addbook 
+                       WHERE book_name LIKE :searchQuery 
+                       OR author_name LIKE :searchQuery 
+                       OR book_genre LIKE :searchQuery 
+                       OR book_description LIKE :searchQuery";
+        $stmtCount = $pdo->prepare($queryCount);
+        $stmtCount->bindValue(':searchQuery', '%' . $searchQuery . '%');
+        $stmtCount->execute();
+        $totalItems = $stmtCount->fetchColumn();
+    }
+} else {
+    // Fetch all books with pagination
+    $query = "SELECT * FROM addbook LIMIT :startIndex, :itemsPerPage";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindValue(':startIndex', $startIndex, PDO::PARAM_INT);
+    $stmt->bindValue(':itemsPerPage', $itemsPerPage, PDO::PARAM_INT);
+    $stmt->execute();
+    $searchResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Get the total number of items in the database
+    $totalItems = $pdo->query("SELECT COUNT(*) FROM addbook")->fetchColumn();
+}
+
+// Calculate total number of pages
+$totalPages = ceil($totalItems / $itemsPerPage);
+?>
+
+<?php include('includes/header.php');?>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.user_icon')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
   <body>
     <nav class="topnav" class="fixed-top">
       <div class="container-fluid">
           <span onclick="window.location.href = 'login_elibrary.php';" class="topnavhead"><img src="logocow.png" class="logo_cow" alt=""></span>
         <span onclick="window.location.href = 'login_elibrary.php';" class="topnavhead" >E-library</span>
-           <img src="user.png" alt="" onclick="window.location.href = 'myprofile.php';" class="user_icon">
-            <button class="addbook" onclick="window.location.href = 'add_book.php';">Add book</button>
-            <button class="logout" onclick="window.location.href = 'logout.php';">Log out</button>
+        
+  </div>
+
+<div class="dropdown">
+   <img src="user.png" alt="" onclick="window.location.href = 'myprofile.php';" class="user_icon"></button>
+   <i class="fa fa-caret-down"></i>  
+   <div class="dropdown-content">
+  <a onclick="window.location.href = 'add_book.php';">Add book</a>  
+  <a onclick="window.location.href = 'logout.php';">Log out</a> 
+  <a onclick="window.location.href = 'my_collection.php';">My Collection</a> 
+  <a onclick="window.location.href = 'about.php';">About Us</a> 
+  <a onclick="window.location.href = 'myprofile.php';">My profile</a> 
+
+         
         </div>
       </nav>
 
     
-<main style="margin: 10px;">
-      <header style="margin: 60px;">
-       <h2>Books of all kinds</h2>
-      </header>
-
-        <!-- A div with container id to hold the card -->
-        <div id="card_container" >
-            
-  
-          <!-- A div with card class for the card  -->
-          <div class="card">
-            <img onclick="window.location.href = 'book_description.php';" src="book1.jpg" alt="Harry Potter" class="card_image">
-      
-            <!-- A div with card__details class to hold the details in the card  -->
-            <div class="card__details">
-      
-              <!-- Span with genre class for the genre -->
-              <span class="genre">Fiction</span>
-              <span class="genre">Mystry</span>
-              
-      
-              <!-- A div with name class for the name of the card -->
-              <div class="name">Heart Spring Mountain</div>
-              <span class="author">Robin MacArthur</span>
-              <p>In this evocative first novel, a young woman returns to her rural Vermont hometown in the wake of a devastating storm to search for home but  ... </p>
-      
-              <button class="read_more" onclick="window.location.href = 'book_description.php';">Read more</button>
-            </div>
-      
-      
-          </div>
-
-          <div class="card">
-            <img onclick="window.location.href = 'book_description.php';" src="book2.jpg" alt="To kill a mockingbird" class="card_image">
-      
-            <!-- A div with card__details class to hold the details in the card  -->
-            <div class="card__details">
-      
-              <!-- Span with genre class for the genre of book -->
-              <span class="genre">Thriller</span>
-              <span class="genre">Domestic Fiction</span>
-      
-              <!-- A div with name class for the name of the card -->
-              <div class="name">To kill a mockingbird</div>
-              <span class="author">Harper Lee</span>
-              <p>To Kill a Mockingbird is primarily an example of Southern Gothic fiction in that it takes place in the South, contains both dark and comedic elements, </p>
-      
-              <button class="read_more">Read more</button>
-            </div>
-      
-      
-          </div>
-
-          
-          <div class="card">
-            <img onclick="window.location.href = 'book_description.php';" src="book3.jpg" alt="Harry Potter" class="card_image">
-      
-            <!-- A div with card__details class to hold the details in the card  -->
-            <div class="card__details">
-      
-              <!-- Span with genre class for the genre -->
-              <span class="genre">Fiction</span>
-              <span class="genre">Thriller</span>
-      
-              <!-- A div with name class for the name of the card -->
-              <div class="name">Harry Potter</div>
-              <span class="author">J.K. Howling</span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur sodales morbi dignissim sed diam
-                pharetra
-                vitae ipsum odio.</p>
-      
-              <button class="read_more">Read more</button>
-            </div>
-      
-
-           
-        
-        
-            </div>
-            <div class="card">
-              <img onclick="window.location.href = 'book_description.php';" src="book2.jpg" alt="Harry Potter" class="card_image">
-        
-              <!-- A div with card__details class to hold the details in the card  -->
-              <div class="card__details">
-        
-                <!-- Span with genre class for the genre -->
-                <span class="genre">Nature</span>
-        
-                <span class="genre">Lake</span>
-        
-                <!-- A div with name class for the name of the card -->
-                <div class="name">Harry Potter</div>
-                <span class="author">J.K. Howling</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur sodales morbi dignissim sed diam
-                  pharetra
-                  vitae ipsum odio.</p>
-        
-                <button class="read_more">Read more</button>
-              </div>
-          </div>
- <!-- card 5 -->
- <div class="card">
-  <img onclick="window.location.href = 'book_description.php';" src="book1.jpg" alt="Harry Potter" class="card_image">
-
-  <!-- A div with card__details class to hold the details in the card  -->
-  <div class="card__details">
-
-    <!-- Span with genre class for the genre -->
-    <span class="genre">Nature</span>
-
-    <span class="genre">Lake</span>
-
-    <!-- A div with name class for the name of the card -->
-    <div class="name">Harry Potter</div>
-    <span class="author">J.K. Howling</span>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur sodales morbi dignissim sed diam
-      pharetra
-      vitae ipsum odio.</p>
-
-    <button class="read_more">Read more</button>
-  </div>
+      <main style="margin: 10px;">
+    <header style="margin: 30px;">
+    <div class="row_search">
+      <div class="col_search1">
+        <h2 onclick="window.location.href = 'login_elibrary.php';">Books of all kinds</h2>
         </div>
-       <!-- card 6 -->
-  <div class="card">
-    <img onclick="window.location.href = 'book_description.php';" src="book2.jpg" alt="Harry Potter" class="card_image">
-  
-    <!-- A div with card__details class to hold the details in the card  -->
-    <div class="card__details">
-  
-      <!-- Span with genre class for the genre -->
-      <span class="genre">Nature</span>
-      <span class="genre">Lake</span>
-  
-      <!-- A div with name class for the name of the card -->
-      <div class="name">Harry Potter</div>
-      <span class="author">J.K. Howling</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur sodales morbi dignissim sed diam
-        pharetra
-        vitae ipsum odio.</p>
-  
-      <button class="read_more">Read more</button>
-    </div>
+        <div class="col_search2">
+        <form method="POST" action="login_elibrary.php" class="search-form">
+      <input type="text" name="search_query" placeholder="Search for books...">
+      <button type="search">Search</button>
+</form>
 </div>
-     <!-- card 7 -->
-  <div class="card">
-    <img onclick="window.location.href = 'book_description.php';" src="book1.jpg" alt="Harry Potter" class="card_image">
-  
-    <!-- A div with card__details class to hold the details in the card  -->
-    <div class="card__details">
-  
-      <!-- Span with genre class for the genre -->
-      <span class="genre">Nature</span>
-  
-      <span class="genre">Lake</span>
-  
-      <!-- A div with name class for the name of the card -->
-      <div class="name">Harry Potter</div>
-      <span class="author">J.K. Howling</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur sodales morbi dignissim sed diam
-        pharetra
-        vitae ipsum odio.</p>
-  
-      <button class="read_more">Read more</button>
+</div>
+    </header>
+
+    <!-- A div with container id to hold the card -->
+    <div id="card_container" >
+
+        <?php
+
+// Loop through each book and create the card dynamically
+foreach ($searchResults as $book) {
+    $book_name = $book['book_name'];
+    $author_name = $book['author_name'];
+    $book_genre = $book['book_genre'];
+    $book_description = $book['book_description'];
+    $book_image = $book['book_image'];
+
+            // Output the card HTML with book details
+            echo '
+ <div class="card">
+ <a href="book_description.php?book_name=' . urlencode($book_name) . '">
+ <img src="' . $book_image . '" class="card_image">
+</a>
+ <!-- A div with card__details class to hold the details in the card  -->
+                <div class="card__details">
+
+                    <!-- Span with genre class for the genre -->
+                    <span class="genre">' . $book_genre . '</span>
+                    <!-- Note: You may need to modify the genre output based on how genres are stored in the database -->
+
+                    <!-- A div with name class for the name of the card -->
+                    <div class="name">' . $book_name . '</div>
+                    <span class="author">' . $author_name . '</span>
+                    <p class="limited-description">' . substr($book_description, 0, 100) . '...</p>
+                    <!-- Full description (hidden initially) -->
+                    <p class="full-description" style="display:none;">' . $book_description . '</p>
+
+                    <button class="read_more" onclick="window.location.href = \'book_description.php\';">Read more</button>
+                </div>
+            </div>
+            ';
+        }
+        ?>
+
     </div>
+    <div class="pagination">
+        <?php
+        // Display "Previous" link
+        if ($currentPage > 1) {
+            $prevPage = $currentPage - 1;
+            echo '<a href="login_elibrary.php?page=' . $prevPage . '"><<</a>';
+        }
+
+        // Display page numbers
+        for ($page = 1; $page <= $totalPages; $page++) {
+            if ($page === $currentPage) {
+                echo '<a class="active" href="login_elibrary.php?page=<?= $page; ?>' . $page . '">' . $page . '</a>';
+            } else { 
+                echo '<a href="login_elibrary.php?page=' . $page . '">' . $page . '</a>';
+            }
+        }
+
+        // Display "Next" link
+        if ($currentPage < $totalPages) {
+            $nextPage = $currentPage + 1;
+            echo '<a href="login_elibrary.php?page=' . $nextPage . '">>></a>';
+        }
+        ?>
     </div>
-  </main>
-      </body>
-      </html>
-      
-      
+</main>
+<?php include('includes/footer.php'); ?>
+

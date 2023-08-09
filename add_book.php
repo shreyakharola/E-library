@@ -1,14 +1,6 @@
 <?php session_start();?> 
+<?php include('includes/header.php');?>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>E-library home page</title>
-    <link rel="stylesheet" href="elibrary.css">
-  </head>
   <body>
     <nav class="topnav" class="fixed-top">
         <div class="container-fluid">
@@ -17,36 +9,53 @@
  </div>
       </nav>
      <div class="addbook_form">
-      <?php 
-      if(isset($_SESSION['status']) && $_SESSION != '')
-      {
-        ?>
-        <div class="alert"> <?php echo $_SESSION['status']; ?>
-          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-             This is an alert box.
-        </div>
-
-        <?php
-        unset($_SESSION['status']);
-      }
-      ?>
+     
 
       <main class="book_upload">  
       <form action="upload.php" method="post" enctype="multipart/form-data" accept="image/x-png,image/gif,image/jpeg" id="addbook_form">
-        <label for="book_name">Book Name:</label>
-        <input type="text" id="book_name" name="book_name" placeholder="Enter Book name" required><br><br>
+      <div class="row">
+      <div class="column3">
+      <label for="book_name">Book Name:</label>
+      </div>
+      <div class="column4">
+        <input type="text" id="book_name" name="book_name" placeholder="Enter Book name" required>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="column3">
         <label for="author_name">Author Name:</label>
-        <input type="text" id="author_name" name="author_name" placeholder="Enter Author name" required><br><br>
+        </div>
+        <div class="column4">
+        <input type="text" id="author_name" name="author_name" placeholder="Enter Author name" required>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="column3">
+        <label for="author_name">Book Genre:</label>
+        </div>
+        <div class="column4">
+        <input type="text" id="author_name" name="book_genre" placeholder="Enter book genre" required>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="column3">
         <label for="book_description">Book description:</label>
-        <textarea type="text" class="description-input" name="book_description" placeholder="Write Book Description" rows="8" cols="200" required></textarea><br><br><br>
+        </div>
+        <div class="column4">
+        <textarea type="text" class="description-input" name="book_description" placeholder="Write Book Description(not more than 25 words)" rows="8" cols="200" required></textarea>
+        </div>
+        </div>
         <label for="fileToUpload">Book Upload:</label>
         <input type="file" name="book_image" id="fileToUpload">
         <div class="addbook_submit">
         <button class="add_book_button" type="submit" value="submit" name="submitted">Submit</button>
-        </div>     
+        </div>      
       </form>
     </main>
       </div>
-      
+
       <?php include('includes/footer.php');?>
     
