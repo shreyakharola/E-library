@@ -42,8 +42,10 @@ if (isset($_GET['book_name'])) {
           <h1>About the Book</h1>
           <p class="about_book">' . $book['book_description'] . '</p>
           <p class="downloads">Genre:' . $book['book_genre'] . '</p>
+          </div>
+
           <a href="' . $book['book_image'] . '" download><button class="download-btn">Download Image</button></a>
-</div>
+          
 </div>
 </article>
 ';
