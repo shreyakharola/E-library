@@ -65,10 +65,11 @@ $totalPages = ceil($totalItems / $itemsPerPage);
 
 <?php include('includes/header.php');?>
 <script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
 function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
+  var dropdown = document.getElementById("myDropdown");
+  if (dropdown) {
+    dropdown.classList.toggle("show");
+  }
 }
 
 // Close the dropdown if the user clicks outside of it
@@ -93,37 +94,30 @@ window.onclick = function(event) {
         <span onclick="window.location.href = 'login_elibrary.php';" class="topnavhead" >E-library</span>
         
   </div>
-
 <div class="dropdown">
-   <img src="user.png" alt="" onclick="window.location.href = 'myprofile.php';" class="user_icon"></button>
-   <i class="fa fa-caret-down"></i>  
-   <div class="dropdown-content">
-  <a onclick="window.location.href = 'add_book.php';">Add book</a>  
+ <img src="user.png" alt="" class="user_icon" onclick="myFunction()" > 
+ <div id="myDropdown" class="dropdown-content">  <a onclick="window.location.href = 'add_book.php';">Add book</a>  
   <a onclick="window.location.href = 'logout.php';">Log out</a> 
   <a onclick="window.location.href = 'my_collection.php';">My Collection</a> 
   <a onclick="window.location.href = 'about.php';">About Us</a> 
   <a onclick="window.location.href = 'myprofile.php';">My profile</a> 
-
-         
-        </div>
+    </div>
+</div>
       </nav>
-
-    
-      <main style="margin: 10px;">
-    <header style="margin: 30px;">
-    <div class="row_search">
-      <div class="col_search1">
-        <h2 onclick="window.location.href = 'login_elibrary.php';">Books of all kinds</h2>
+    <header>
+      <div class="row_elibrary">
+        <div class="column_1el">
+        <h2 onclick="window.location.href = 'login_elibrary.php';" class="h2_login_elibrary">Books of all kinds</h2>
         </div>
-        <div class="col_search2">
+        <div class="column_2el">
         <form method="POST" action="login_elibrary.php" class="search-form">
-      <input type="text" name="search_query" placeholder="Search for books...">
-      <button type="search">Search</button>
+    <input type="text" name="search_query" placeholder="Search for books...">
+    <button type="submit">Search</button>
 </form>
 </div>
 </div>
     </header>
-
+<main>
     <!-- A div with container id to hold the card -->
     <div id="card_container" >
 

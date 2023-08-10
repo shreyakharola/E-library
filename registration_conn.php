@@ -4,8 +4,8 @@
 	include("connection.php");
 
 
-$firstname = $lastname = $username = $email = $password = $confirm_password = '';
-$firstname_err = $lastname_err = $username_err = $email_err = $password_err = $confirm_password_err = '';
+$firstname = $lastname = $username = $email = $password = $confirm_password = $usertype = '';
+$firstname_err = $lastname_err = $username_err = $email_err = $password_err = $confirm_password_err = $usertype_err = '';
 function random_num() {
     return rand();
 }
@@ -16,6 +16,7 @@ if (isset($_POST['submitted'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
+    $usertype = $_POST['usertype'];
 
     if (empty($firstname)) {
         $firstname_err = 'Please enter firstname';
@@ -81,10 +82,10 @@ if (isset($_POST['submitted'])) {
         $password_err = 'Password must be at least 6 characters';
     }
 
-    if (empty($firstname_err) && empty($lastname_err) && empty($username_err) && empty($email_err) && empty($password_err) && empty($confirm_password_err)) {
+    if (empty($firstname_err) && empty($lastname_err) && empty($username_err) && empty($email_err) && empty($password_err) && empty($confirm_password_err) && empty($usertype_err)) {
         $user_id = random_num(20);
-        $query = "INSERT INTO registration_form (user_id, firstname, lastname, username, email, password, confirm_password) 
-                  VALUES (:user_id, :firstname, :lastname, :username, :email, :password, :confirm_password)";
+        $query = "INSERT INTO registration_form (user_id, firstname, lastname, username, email, password, confirm_password, usertype) 
+                  VALUES (:user_id, :firstname, :lastname, :username, :email, :password, :confirm_password, :usertype)";
         $stmt = $pdo->prepare($query);
         $result = $stmt->execute([
             ':user_id' => $user_id,
@@ -93,7 +94,8 @@ if (isset($_POST['submitted'])) {
             ':username' => $username,
             ':email' => $email,
             ':password' => $password,
-            ':confirm_password' => $confirm_password
+            ':confirm_password' => $confirm_password,
+            'usertype' => $usertype
         ]);
 
         if ($result) {
@@ -115,6 +117,7 @@ if (isset($_POST['submitted'])) {
         echo $username_err . "<br>";
         echo $email_err . "<br>";
         echo $password_err . "<br>";
+        echo $usertype_err . "<br>";
 }
 }
 ?>

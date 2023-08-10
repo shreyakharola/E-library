@@ -62,14 +62,16 @@
 /* login page css below: */
 
 body {
+  overflow: scroll;
+  margin: 0;
   background-color: lemonchiffon;
   font-size: 12px;
   font-family: "Open Sans", sans-serif;
   color: #2b3e51;
+  width: auto;
 }
 
 .login_header {
-  font-weight: 300;
   text-align: center;
 }
 
@@ -77,11 +79,27 @@ p {
   position: relative;
 }
 
+.radio {
+  font-size: 11px;
+  color: #7f8c9b;
+  line-height: 20%;
+}
+
+input[type="radio"] {
+  width: 8%;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  display: inline-block;
+  line-height: 10px;
+  text-decoration: none;
+}
 
 #login-form-wrap {
   background-color: #fff;
-  width: 35%;
-  margin: 5px auto;
+  width: 30%;
+  height: auto;
+  margin: 15px auto 15px;
   text-align: center;
   padding: 5px 5px 5px 5px;
   border-radius: 4px;
@@ -92,20 +110,13 @@ p {
   padding: 0 30px;
 }
 
-input {
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  outline: none;
-  height: 60px;
-  line-height: 60px;
-  border-radius: 4px;
-}
+
 
  input[type="text"],
 input[type="email"],
 input[type="password"] {
   width: 100%;
+  height:50px;
   padding: 0 0 0 10px;
   margin: 0;
   color: #8a8b8e;
@@ -196,18 +207,43 @@ input[type="submit"] {
   color: #8a8b8e;
   font-size: 12px;
   width: auto;
+  height: 168px;
   padding: 2px;
   border-radius: 0 0 4px 4px;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+}
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 130px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  font-family:'Times New Roman', Times, serif;
+  padding: 6px 8px;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: 300px;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #007bff;  color: white;}
+
+.show {display: block;}
 
 /* login with linkdn: */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
-body {
-  background-color: #f4f4f4;
-  margin: 0;
-}
 
 input,
 .btn {
@@ -293,8 +329,7 @@ input[type=submit]:hover {
   width: 30px;
   height: 30px;
   padding: 5px 5px;
-  float: right;
-  margin: 18px 20px 0px;
+  margin: 18px 60px 0px;
 }
 
 
@@ -318,8 +353,8 @@ body {
   display: grid;
 grid-template-columns: repeat(4, 1fr);
 grid-auto-rows: auto;
-margin: 80px;
-  margin-top: 10px;
+margin: 0px;
+  margin-top: 110px;
     display: grid;
   column-gap: 2em;
   row-gap: 2em;
@@ -364,7 +399,7 @@ margin: 80px;
 
 /* Style p element */
 p {
-  font-size: 11px;
+  font-size: 15px;
   color: #7f8c9b;
   line-height: 150%;
 }
@@ -430,12 +465,7 @@ p {
   margin: 15px 15px;
 }
 
-.rating {
-  width: 220px;
-  height: 40px;
-  margin: 0px;
-  padding: 0px;
-}
+
 
 @media only screen and (max-width:800px) {
   /* For tablets: */
@@ -494,6 +524,7 @@ p {
   cursor: pointer;
   border-radius: 5px;
   transition: all 0.3s ease;
+  margin:10px;
 }
 
 .download-btn:hover {
@@ -522,29 +553,100 @@ footer {
   position: absolute;
   font-size: small;
   display: block; 
-  bottom: 0;
   width: 100%;
   height: 1.5rem;
   background-color: grey;
   color: white;
   text-align: center;
+  bottom: auto;
   }
+
+/*profle button fro d*/
 
 
 .book1 {
   margin: 20px;
 }
 
+.row_elibrary {
+  width: 100%;
+}
+
+.column_1el {
+  float:left;
+   font-size: x-large;
+  width:50%;
+  margin:0px
+}
+
+.column_2el {
+  float:right;
+  width:40%;
+  margin:0px
+}
+/*search fuctionnaltiy*/
+
+.search-form {
+  display: flex;
+  margin-top: 30px;
+
+}
+
+/* Style for the search input */
+.search-form input[type="text"] {
+  padding: 8px;
+  width: 45%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: inherit;
+}
+
+/* Style for the search button */
+.search-form button {
+  padding: 8px 25px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add hover effect to the search button */
+.search-form button:hover {
+  background-color: #0056b3;
+}
+
+/*pagination*/
+/* Add this CSS to style the pagination links */
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination a {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #333;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.pagination a.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination a:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
 /* myprofile.html */
 
-body{
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #ddd;
-  align-items: center;
-  justify-content: center;
-}
+
 
 *{
   box-sizing: border-box;
@@ -717,7 +819,7 @@ table {
 }
 
 main {
-  margin-left: 200px; /* Same as the width of the sidenav */
+  margin-left: 50px; /* Same as the width of the sidenav */
   font-size: 18px; /* Increased text to enable scrolling */
   padding: 0px 10px;
 }
@@ -734,9 +836,7 @@ main {
   -webkit-transform: rotate(-45deg);
 }
 
-body {
-  overflow: scroll;
-}
+
 
 .my_collection_section {
  /* The width of your document, I suppose */

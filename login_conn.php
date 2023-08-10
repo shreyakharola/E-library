@@ -11,6 +11,7 @@
 		
 		$username = $_POST["username"];
 		$password = $_POST["password"];
+		$usertype = $_POST["usertype"];
 	
 		try {
 			$stmt = $pdo->prepare("SELECT * FROM registration_form WHERE username = :username OR email = :email");

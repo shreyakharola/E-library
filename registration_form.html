@@ -36,9 +36,15 @@
           <p>
           <input type="password" id="password" name="confirm_password" placeholder="confirm password" required><i class="validation"><span></span><span></span></i>
           </p>
+          <label for="user type"><b>User Type</b></label>
+          <input type="radio" name="usertype" value="user" id="choice-1" checked>
+              <label for="choice-1">User</label>
+          <input type="radio" name="usertype" value="admin" id="choice-2">
+              <label for="choice-2">Admin</label>
           <p>
           <input type="submit" id="register" value="Register"  name="submitted">
           </p>
+         
         </form>
         <div id="create-account-wrap">
           <p>Already have an account?<a href="login_page.php">Login</a><p> 
