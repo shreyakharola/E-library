@@ -1,7 +1,8 @@
 <?php
 // Connect to the database
 require_once 'connection.php';
-include("security.php");
+ include('security.php');
+
 
 // Number of books to display per page
 $itemsPerPage = 5;
@@ -98,10 +99,11 @@ window.onclick = function(event) {
 <div class="dropdown">
  <img src="user.png" alt="" class="user_icon" onclick="myFunction()" > 
  <div id="myDropdown" class="dropdown-content"> 
- <a onclick="window.location.href = 'myprofile.php';">My profile</a> 
- <a onclick="window.location.href = 'my_collection.php';">My Collection</a>  
- <a onclick="window.location.href = 'about.php';">About Us</a> 
- <a onclick="window.location.href = 'logout.php';">Log out</a> 
+     <a onclick="window.location.href = 'add_book.php';">Add book</a>  
+     <a onclick="window.location.href = 'myprofile.php';">My profile</a> 
+     <a onclick="window.location.href = 'my_collection.php';">My Collection</a> 
+     <a onclick="window.location.href = 'about.php';">About Us</a> 
+     <a onclick="window.location.href = 'logout.php';">Log out</a> 
     </div>
 </div>
       </nav>

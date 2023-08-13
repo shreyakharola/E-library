@@ -1,13 +1,18 @@
 <?php 
 
-    session_start();
 	include("connection.php");
+    include("security.php");
 
 
 $firstname = $lastname = $username = $email = $password = $confirm_password = $usertype = '';
 $firstname_err = $lastname_err = $username_err = $email_err = $password_err = $confirm_password_err = $usertype_err = '';
-function random_num() {
-    return rand();
+function random_num($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $random_string = '';
+    for ($i = 0; $i < $length; $i++) {
+        $random_string .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $random_string;
 }
 if (isset($_POST['submitted'])) {
     $firstname = $_POST['firstname'];
@@ -25,6 +30,8 @@ if (isset($_POST['submitted'])) {
     if (empty($lastname)) {
         $lastname_err = 'Please enter lastname';
     }
+
+   
 
     if (empty($username)) {
         $username_err = 'Please enter username';
@@ -65,6 +72,12 @@ if (isset($_POST['submitted'])) {
         unset($stmt);
     }
 
+    if (empty($usertype)) {
+        $usertype_err = 'Please select user type';
+    } else if (!in_array($usertype, ['admin', 'user'])) {
+        $usertype_err = 'Invalid user type';
+    }
+
     if (empty($confirm_password)) {
         $confirm_password_err = 'Please confirm password';
     } else {
@@ -83,7 +96,7 @@ if (isset($_POST['submitted'])) {
     }
 
     if (empty($firstname_err) && empty($lastname_err) && empty($username_err) && empty($email_err) && empty($password_err) && empty($confirm_password_err) && empty($usertype_err)) {
-        $user_id = random_num(20);
+     $user_id = random_num(20); // Change to your desired length 
         $query = "INSERT INTO registration_form (user_id, firstname, lastname, username, email, password, confirm_password, usertype) 
                   VALUES (:user_id, :firstname, :lastname, :username, :email, :password, :confirm_password, :usertype)";
         $stmt = $pdo->prepare($query);
@@ -95,7 +108,9 @@ if (isset($_POST['submitted'])) {
             ':email' => $email,
             ':password' => $password,
             ':confirm_password' => $confirm_password,
-            'usertype' => $usertype
+            ':usertype' => $usertype
+
+            
         ]);
 
         if ($result) {

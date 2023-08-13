@@ -1,4 +1,4 @@
-<?php session_start();?> 
+<?php include('security.php');?> 
 <?php include('includes/header.php');?>
 
   <body>
@@ -48,11 +48,17 @@
         <textarea type="text" class="description-input" name="book_description" placeholder="Write Book Description(not more than 25 words)" rows="8" cols="200" required></textarea>
         </div>
         </div>
+        <div class="row">
+        <div class="column3">
         <label for="fileToUpload">Book Upload:</label>
+        </div>
+        <div class="column4">
         <input type="file" name="book_image" id="fileToUpload">
-        <div class="addbook_submit">
+        </div>
+        </div>
+        <div class="addbook_submit" style="margin: 0px 20px 2px 350px;">
         <button class="add_book_button" type="submit" value="submit" name="submitted">Submit</button>
-        </div>      
+        </div>    
       </form>
     </main>
       </div>

@@ -1,5 +1,6 @@
 <?php
 require_once 'connection.php';
+include("security.php");
 
 if (isset($_POST['book_name'])) {
     $book_name = urldecode($_POST['book_name']);

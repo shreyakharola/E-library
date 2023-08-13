@@ -1,4 +1,4 @@
-<?php session_start();?> 
+<?php include('security.php');?>
 <?php include('includes/header.php');?>
   <body>
       <nav class="topnav" class="fixed-top">

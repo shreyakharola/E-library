@@ -1,5 +1,6 @@
 <?php
 require_once 'connection.php';
+include('security.php');
 
 if(isset($_POST['submitted'])) {
     $book_name = $_POST['book_name'];
