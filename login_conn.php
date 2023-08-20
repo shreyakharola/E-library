@@ -1,8 +1,8 @@
 <?php
     
-
+    session_start();
     include("connection.php");
-    include("security.php");
+
 	
 
     error_reporting(E_ALL);
@@ -26,11 +26,13 @@
 					// Check if usertype matches
 					if ($usertype === $user['usertype']) {
 						$_SESSION['username'] = $username;
+                        
 						if ($user['usertype'] == "admin") {
 							header('Location: admin_login_elibrary.php');
 						} else if ($user['usertype'] == "user") {
 							header('Location: login_elibrary.php');
 						}
+                        $_SESSION['logged'] = 'yes';
 						exit();
 					} else  {
 						$_SESSION['status'] = "Incorrect User type";

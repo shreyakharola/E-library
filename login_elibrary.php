@@ -1,7 +1,18 @@
 <?php
 // Connect to the database
 require_once 'connection.php';
-include("security.php");
+
+
+  session_start();
+
+//checking if the session exists
+//if the session is not set it redirects the user to the login form/page
+
+  if( isset($_SESSION["login"])){
+      header("location:login_elibrary.php");
+  }
+
+
 
 // Number of books to display per page
 $itemsPerPage = 5;
@@ -86,6 +97,8 @@ window.onclick = function(event) {
     }
   }
 }
+
+
 </script>
 
   <body>

@@ -1,6 +1,14 @@
-<?php include('security.php');?>
-<?php include('includes/header.php'); ?>
 
+<?php include('includes/header.php'); ?>
+<?php session_start();
+
+//checking if the session exists
+//if the session is not set it redirects the user to the login form/page
+
+  if(! isset($_SESSION["logged"])){
+      header("location:login_page.php");
+  }
+  ?>
   <body>
     <nav class="topnav" class="fixed-top">
       <div class="container-fluid">
@@ -30,7 +38,7 @@
         </form>
         <div id="create-account-wrap">
           <p>forgot password? <a href="#">Click here</a></p>  
-          <p>Not a member? <a class="register_link" href="registration_form.html">Register</a></p>
+          <p>Not a member? <a class="register_link" href="registration_form.php">Register</a></p>
           <h4 style="color: black; margin:5px 0 20px;">OR</h4>
          <a href="#" class="google"><i class="fa fa-google fa-fw">
                       </i> Login with Google+

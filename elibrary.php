@@ -1,5 +1,5 @@
 <?php session_start();?> 
-<?php include('security.php');?>
+
 <?php include('includes/header.php');?>
   <body>
   <div class="bgimg-1">
